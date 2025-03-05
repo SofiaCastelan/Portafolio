@@ -360,7 +360,7 @@ a{
 .pixel-art-animation {
     width: 100px;
     height: 130px;
-    background-image: url('/img/fantasma1.png');
+    background-image: url('../img/fantasma1.png');
     position: relative;
     left: 0;
     top: 2rem;
@@ -401,13 +401,13 @@ a{
 }
 
 @keyframes play {
-    0% { background-image: url('/img/fantasma1.png'); } /* Paso 1 */
-    12.5% { background-image: url('/img/fantasma2.png'); } /* Paso 2 */
-    25% { background-image: url('/img/fantasma3.png'); } /* Paso 3 */
-    37.5% { background-image: url('/img/fantasma4.png'); } /* Paso 4 */
-    50% { background-image: url('/img/fantasma4.png'); } /* Mantiene el paso 4 */
-    62.5% { background-image: url('/img/fantasma3.png'); } /* Retroceso: Paso 3 */
-    75% { background-image: url('/img/fantasma2.png'); } /* Retroceso: Paso 2 */
-    87.5% { background-image: url('/img/fantasma1.png'); } /* Retroceso: Paso 1 */
-    100% { background-image: url('/img/fantasma1.png'); } /* Vuelve al inicio */
+    0% { background-image: url('../img/fantasma1.png'); } /* Paso 1 */
+    12.5% { background-image: url('../img/fantasma2.png'); } /* Paso 2 */
+    25% { background-image: url('../img/fantasma3.png'); } /* Paso 3 */
+    37.5% { background-image: url('../img/fantasma4.png'); } /* Paso 4 */
+    50% { background-image: url('../img/fantasma4.png'); } /* Mantiene el paso 4 */
+    62.5% { background-image: url('../img/fantasma3.png'); } /* Retroceso: Paso 3 */
+    75% { background-image: url('../img/fantasma2.png'); } /* Retroceso: Paso 2 */
+    87.5% { background-image: url('../img/fantasma1.png'); } /* Retroceso: Paso 1 */
+    100% { background-image: url('../img/fantasma1.png'); } /* Vuelve al inicio */
 }

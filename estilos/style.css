@@ -18,7 +18,7 @@ body{
 
 
 
-.menu{
+.menu {
     background-color: #3D1422;
     background-image: url(../img/Destellos.png);
     width: 100%;
@@ -27,31 +27,41 @@ body{
     font-family: "Pixelify Sans", serif;
     font-size: 15px;
     color: #fff;
+    position: relative; /* Estado inicial */
+    transition: background-color 0.3s ease, background-image 0.3s ease, padding 0.3s ease;
 }
 
-.luna{
+.menu.fijo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: transparent !important; /* Elimina color de fondo */
+    padding: 0.5rem 0; /* Ajusta el padding para mejor estética */
+    z-index: 1000; /* Asegura que quede por encima del contenido */
+}
+
+.luna {
     padding-left: 1rem;
     width: 6rem;
     height: 5rem;
 }
 
-
-.menu,
-ul{
+.menu, ul {
     list-style-type: none;
     display: flex;
     cursor: pointer;
 }
 
-.contenedor-menu{
+.contenedor-menu {
     margin-left: 65%;
 }
 
-
-.contenedor-menu-lista{
+.contenedor-menu-lista {
     flex-grow: 1;
     padding: 1rem;
 }
+
 
 .panel {
     height: 100vh;
@@ -153,34 +163,25 @@ a{
 
 
 .color-secundario-presentacion{
-    
+    display: flex;  
     background-color: #1E141D;
     width: 100%;
     height: 14.8rem;
-    
-}
-
-
-.circulo{
-    position: absolute;
-    z-index: 0;
-    background-color: #B5ADFF;
-    width: 6%;
-    height: 6rem;
-   border-radius: 100%;
-    margin-left: 50%;
-    margin-top: 9%;
-    text-align: center;
     align-content: center;
-    cursor: pointer;
 }
 
 
-.circle{
-    font-size: 1rem;
-    font-family: "Delius Swash Caps", serif;
+.img-flecha{
+  
+  width: 20rem;
+  height: 10rem;
+  margin-left: 50%;
+  margin-top: 6rem;
+  animation: flotar 1.2s ease-in-out infinite;
 
 }
+
+
 
 .quiensoy{
     top: -10rem;
@@ -243,11 +244,10 @@ a{
 
 
 .calcifer{
-    z-index: 2;
     width: 200px;
     height: 233.44px;
     position: absolute;
-    margin: 4% 0 0% 32%;
+    margin: 6% 0 0% 32%;
 }
 
 .color-secundario {
@@ -281,33 +281,19 @@ a{
     width: 100%;
 }
 
-/* Animación de scroll normal */
+
 .slider .slide-track {
     animation: scroll 50s linear infinite;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(calc(-50rem * 5));
-    }
-}
 
-/* Animación de scroll en dirección contraria */
+
+
 .slider .slide-track2 {
     animation: scroll2 50s linear infinite;
 }
 
-@keyframes scroll2 {
-    0% {
-        transform: translateX(calc(-50rem * 5));
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+
 
 .habilidades{
     position: relative;
@@ -324,7 +310,7 @@ a{
 .proyecto{
     width: 40%;
     height: 50rem;
-    margin: 2.5rem 1rem 0 2rem;
+    margin: 7rem 1rem 0 2rem;
     justify-items: center;
     padding: 1rem;
     text-align: center;
@@ -357,14 +343,22 @@ a{
 }
 
 .sprite-puerta {
-    width: 277px; /* Ancho de un solo frame */
-    height: 335px; /* Alto de un solo frame */
+    width: 277px; 
+    height: 335px;
     background: url('../img/door.png') no-repeat;
-    background-size: 1661px 335px; /* Ajustamos para que encajen los 6 frames */
-    transform: scale(0.5); /* Reducimos el tamaño manteniendo la proporción */
+    background-size: 1662px 335px; /* 6 frames * 277px */
+    transform: scale(0.5);
     justify-content: center;
-    animation: openCloseDoor 3s steps(6) infinite alternate;
-    
+}
+
+/* Mantiene el último frame al abrir */
+.sprite-puerta.abrir {
+    animation: abrirPuerta 0.8s steps(5) forwards; 
+}
+
+/* Mantiene el primer frame al cerrar */
+.sprite-puerta.cerrar {
+    animation: cerrarPuerta 0.8s steps(5) forwards;
 }
 
 .segundo-color-h{
@@ -379,7 +373,7 @@ a{
     background-image: url('../img/fantasma1.png');
     position: relative;
     left: 0;
-    top: 0;
+    top: -1rem;
     animation: 
         moveRight 20s linear infinite, /* Combina todas las transformaciones */
         play 2s steps(4) infinite; /* Animación de los sprites */
@@ -471,7 +465,37 @@ textarea{
     cursor: pointer;
 }
 
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-50rem * 5));
+    }
+}
 
+@keyframes scroll2 {
+    0% {
+        transform: translateX(calc(-50rem * 5));
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0.5rem);
+    }
+
+    50%{
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(0.5rem);
+    }
+}
 
 @keyframes moveRight {
     0% { 
@@ -504,9 +528,14 @@ textarea{
     }
 }
 
-@keyframes openCloseDoor {
+@keyframes abrirPuerta { 
     from { background-position: 0 0; }
-            to { background-position: -1661px 0; } 
+    to { background-position: -1385px 0; } /* 5 frames * 277px */
+}
+
+@keyframes cerrarPuerta {
+    from { background-position: -1385px 0; }
+    to { background-position: 0 0; }
 }
 
 @keyframes play {

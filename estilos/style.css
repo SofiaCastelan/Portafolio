@@ -9,12 +9,18 @@
     box-sizing: border-box;
 }
 
+
+
 body{
     background-color: black;
+
 }
 
+
+
 .menu{
-    background: #3F1523;
+    background-color: #3D1422;
+    background-image: url(../img/Destellos.png);
     width: 100%;
     height: 4rem;
     align-content: center;
@@ -29,18 +35,12 @@ body{
     height: 5rem;
 }
 
-.destello{
-    margin-top: 5px;
-    margin-left: 9rem;
-    position: absolute;
-    width: 90%;
-    height: 3.4rem;
-}
 
 .menu,
 ul{
     list-style-type: none;
     display: flex;
+    cursor: pointer;
 }
 
 .contenedor-menu{
@@ -54,16 +54,15 @@ ul{
 }
 
 .presentacion{
-    width: 100vh;
+    width: 100%;
     height: 38rem;
 }
 
 .texto{
     margin-top: 6rem;
     text-align: center;
-    width: 70%;
+    width: 100%;
     height: 30rem;
-    margin-left: 18rem;
     font-family: "Press Start 2P", serif;
     font-size: 55px;
 }
@@ -227,7 +226,6 @@ a{
 
 
 .sophie{
-    z-index: 1;
     width: 70%;
     height: 80%;
     margin: 10% 0 0 2%;
@@ -307,7 +305,7 @@ a{
     top: 10rem;
     background-color: #3D1422;
     width: 100%;
-    height: 63rem;
+    height: 65rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -337,21 +335,30 @@ a{
 }
 
 .img-proyecto{
-    width: 80%;
+    width: 117%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
 .img-ss{
     width: 6rem;
+    margin: .5rem;
 }
 
-.img-ssp{
-    padding: 2rem 1rem;
-    width: auto;
+.sprite-puerta {
+    width: 277px; /* Ancho de un solo frame */
+    height: 335px; /* Alto de un solo frame */
+    background: url('../img/door.png') no-repeat;
+    background-size: 1661px 335px; /* Ajustamos para que encajen los 6 frames */
+    transform: scale(0.5); /* Reducimos el tamaño manteniendo la proporción */
+    justify-content: center;
+    animation: openCloseDoor 3s steps(6) infinite alternate;
+    
 }
 
 .segundo-color-h{
-    margin-top: -2%;
     width: 100%;
     background-color: #1E141D;
     
@@ -363,11 +370,98 @@ a{
     background-image: url('../img/fantasma1.png');
     position: relative;
     left: 0;
-    top: 2rem;
+    top: 0;
     animation: 
         moveRight 20s linear infinite, /* Combina todas las transformaciones */
         play 2s steps(4) infinite; /* Animación de los sprites */
 }
+
+.contactame{
+    background-color: #1E141D;
+    width: 100%;
+    height: 63rem;
+    display: flex;
+    justify-content: flex-start;
+    font-family: "Pixelify Sans", serif;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-contactame{
+    margin-top: 10rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.formulario{
+    margin-top: 2rem;
+    width: 60%;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.fo{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.cd{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.btn-servicio{
+    margin: 1rem 0 1rem 0;
+    cursor: pointer;
+}
+
+input, .btn-servicio, textarea{
+    width: 25rem;
+    height: 3rem;
+    background-color: #CA7154;
+    border: 4px solid #000;
+    border-radius: 8px;
+    font-family: "Pixelify Sans";
+    font-size: 1rem;
+}
+
+.segunda-parte-form{
+    width: 100%;
+}
+
+.otro{
+    align-items: center;
+}
+
+.dos{
+    width: 30rem;
+    height: 3rem;
+}
+
+textarea{
+    margin: 1rem;
+    width: 80%;
+    height: 8rem;
+}
+
+.button-enviar{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.btn-enviar{
+    font-family: "Pixelify Sans";
+    padding: 0.5rem;
+    border: none;
+    background: white;
+    width: 6rem;
+    cursor: pointer;
+}
+
+
 
 @keyframes moveRight {
     0% { 
@@ -380,7 +474,7 @@ a{
     }
     25% { 
        
-        transform: scaleX(-1) translateY(-10px); /* Sube ligeramente */
+        transform: scaleX(-1) translateY(-20px); /* Sube ligeramente */
     }
     50% { 
         left: 90%;
@@ -392,12 +486,17 @@ a{
     }
     75% { 
     
-        transform: scaleX(1) translateY(-10px); /* Sube ligeramente */
+        transform: scaleX(1) translateY(-20px); /* Sube ligeramente */
     }
     100% { 
         left: 0;
         transform: scaleX(1) translateY(0); /* Aplica flip horizontal */
     }
+}
+
+@keyframes openCloseDoor {
+    from { background-position: 0 0; }
+            to { background-position: -1661px 0; } 
 }
 
 @keyframes play {

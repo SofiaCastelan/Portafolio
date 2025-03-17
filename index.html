@@ -9,7 +9,6 @@
 <body>
     <header class="menu">
         <img src="img/luna.png" alt="" class="luna">
-        <img src="img/Destellos.png" alt="" class="destello">
         <ul class="contenedor-menu">
             <li class="contenedor-menu-lista">Inicio</li>
             <li class="contenedor-menu-lista">Proyectos</li>
@@ -158,20 +157,64 @@
                 <h1>Proyectos</h1>
             </div>
             <div class="img-proyecto">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
-                <img src="img/proyectos.png" alt="" class="img-ssp">
+                <div class="sprite-puerta"></div>
+                <div class="sprite-puerta"></div>
+                <div class="sprite-puerta"></div>
+                <div class="sprite-puerta"></div>
+                <div class="sprite-puerta"></div>
             </div>
         </div>
     <div class="segundo-color-h">
         <div class="pixel-art-animation"></div>
     </div>
+    <div class="contactame">
+        <div class="titulo-contactame">
+            <h1>Contactame</h1>
+        </div>
+        <form action="" method="post" class="formulario">
+            <ul class="fo">
+                <div class="primer-parte-form">
+              <li class="cd">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="user_name" />
+              </li>
+              <li class="cd">
+                  <label for="mail">Correo electrónico:</label>
+                  <input type="email" id="mail" name="user_mail" />
+                </li>
+                <li class="cd">
+                  <label for="trabajo">Trabajo en:</label>
+                  <input type="text" id="trab" name="user_trab" />
+                </li>
+                <li class="cd">
+                    <label for="busca">Estoy en busca de:</label>
+                    <button type="submit" class="btn-servicio">Servicios de diseño web</button>        
+                    <button type="submit" class="btn-servicio">Servicios de desarrollo web</button>     
+                </li>
+            </div>
+            <div class="segunda-parte-form">
+                <li class="cd otro">
+                    <label for="presupuesto">Mi presupuesto es de:</label>
+                    <button type="submit" class="btn-servicio dos">MXN $3,500 - $4,500</button>        
+                    <button type="submit" class="btn-servicio dos">MXN $5,500 - $7,500</button>        
+                    <button type="submit" class="btn-servicio dos">MXN $8,500 - $10,000</button>        
+                  </li>
+              <li class="cd otro">
+                <label for="msg">Detalles del proyecto:</label>
+                <textarea id="msg" name="user_message"></textarea>
+              </li>
+              <li class="button-enviar">
+                <button type="submit" class="btn-enviar">Enviar</button>
+              </li>  
+            </div>            
+            </ul>
+          </form>
+          
+    </div>
 </div>
+
+
+
 <script src="js/script.js"></script>
 </body>
 </html>

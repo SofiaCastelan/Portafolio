@@ -53,7 +53,15 @@ ul{
     padding: 1rem;
 }
 
+.panel {
+    height: 100vh;
+    top: 0;
+    will-change: transform;
+  }
+  
+
 .presentacion{
+    
     width: 100%;
     height: 38rem;
 }
@@ -175,6 +183,7 @@ a{
 }
 
 .quiensoy{
+    top: -10rem;
     position: relative;
     background-color: #A16768;
     width: 100%;
@@ -302,7 +311,7 @@ a{
 
 .habilidades{
     position: relative;
-    top: 10rem;
+    top: -9.3rem;
     background-color: #3D1422;
     width: 100%;
     height: 65rem;
@@ -377,6 +386,7 @@ a{
 }
 
 .contactame{
+    margin-top: -7.1rem;
     background-color: #1E141D;
     width: 100%;
     height: 63rem;
@@ -510,3 +520,4 @@ textarea{
     87.5% { background-image: url('../img/fantasma1.png'); } /* Retroceso: Paso 1 */
     100% { background-image: url('../img/fantasma1.png'); } /* Vuelve al inicio */
 }
+

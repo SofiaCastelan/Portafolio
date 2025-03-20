@@ -53,6 +53,9 @@ body{
     cursor: pointer;
 }
 
+
+
+
 .contenedor-menu {
     margin-left: 65%;
 }
@@ -62,6 +65,9 @@ body{
     padding: 1rem;
 }
 
+.direccion{
+    text-decoration: none;
+}
 
 .panel {
     height: 100vh;
@@ -135,6 +141,11 @@ img{
     align-content: center;
 }
 
+.img-social{
+    margin-left: 0.5rem;
+    width: 2rem;
+}
+
 .redes-sociales-presentacion,
 p{
     color: #fff;
@@ -143,7 +154,7 @@ p{
 }
 .redes-sociales-presentacion,
 a{
-    text-decoration: none;
+
     color: #fff;
 }
 
@@ -352,9 +363,10 @@ a{
     width: 277px; 
     height: 335px;
     background: url('../img/door.png') no-repeat;
-    background-size: 1662px 335px; /* 6 frames * 277px */
+    background-size: 1662px 335px;
     transform: scale(0.5);
     justify-content: center;
+    
 }
 
 /* Mantiene el último frame al abrir */

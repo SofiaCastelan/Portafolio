@@ -20,9 +20,9 @@ let observer = null;
 if (ScrollTrigger.isTouch === 1) {
     observer = ScrollTrigger.normalizeScroll(true);
 }
-
+//
 document.addEventListener("DOMContentLoaded", () => {
-    const puertas = document.querySelectorAll(".sprite-puerta");
+    const puertas = document.querySelectorAll(".solo-esta");
 
     puertas.forEach(puerta => {
         let animating = false;
@@ -34,6 +34,10 @@ document.addEventListener("DOMContentLoaded", () => {
             puerta.classList.remove("cerrar");
             requestAnimationFrame(() => {
                 puerta.classList.add("abrir");
+                puerta.onclick = () => {
+                    window.location.href = "https://sofi261022.itch.io/aventura-d";
+                };
+                puerta.style.cursor = "pointer";
             });
         });
 
